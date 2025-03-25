@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenilen Konular - AI Öğrenim Yolculuğum</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animasyon Kütüphanesi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Prism.js - Kod Vurgulama -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-robot me-2"></i>AI Öğrenim Yolculuğum
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Ana Sayfa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="konular.html">
+                            <i class="fas fa-book-open me-1"></i>Öğrenilen Konular
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kaynaklar.html">
+                            <i class="fas fa-bookmark me-1"></i>Kaynak Kütüphanesi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projeler.html">
+                            <i class="fas fa-code me-1"></i>Proje Günlüğü
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sayfa Başlığı -->
+    <div class="bg-light py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-center" data-aos="fade-up">Öğrenilen Konular</h1>
+            <p class="lead text-center" data-aos="fade-up" data-aos-delay="200">Yapay zeka yolculuğumda öğrendiğim konular ve ilerleme durumum.</p>
+        </div>
+    </div>
+
+    <!-- Kategori Filtreleme -->
+    <section class="py-4">
+        <div class="container">
+            <div class="d-flex justify-content-center flex-wrap gap-2 mb-4" data-aos="fade-up">
+                <button class="btn btn-primary active filter-btn" data-filter="all">Tümü</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="makine-ogrenimi">Makine Öğrenimi</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="derin-ogrenme">Derin Öğrenme</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="nlp">Doğal Dil İşleme</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="goruntu">Bilgisayarlı Görü</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="pekistirmeli">Pekiştirmeli Öğrenme</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Konu Kartları -->
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Makine Öğrenimi - Konu 1 -->
+                <div class="col-md-6 col-lg-4 mb-4 topic-card" data-category="makine-ogrenimi" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-brain fa-2x me-3 text-primary"></i>
+                                <h4 class="card-title mb-0">Denetimli Öğrenme</h4>
+                            </div>
+                            <p class="card-text">Etiketli veri kullanarak tahmin modelleri oluşturma. Regresyon ve sınıflandırma algoritmaları, model değerlendirme ve hiperparametre optimizasyonu.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Algoritma</span>
+                                <span class="badge bg-secondary me-1">Matematiksel Model</span>
+                            </div>
+                            <h6>İlerleme Durumu:</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#topic1Modal">
+                                Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Makine Öğrenimi - Konu 2 -->
+                <div class="col-md-6 col-lg-4 mb-4 topic-card" data-category="makine-ogrenimi" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-cogs fa-2x me-3 text-primary"></i>
+                                <h4 class="card-title mb-0">Denetimsiz Öğrenme</h4>
+                            </div>
+                            <p class="card-text">Etiketsiz veri üzerinde örüntü ve yapı keşfetme. Kümeleme algoritmaları, boyut indirgeme ve anomali tespiti teknikleri.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Algoritma</span>
+                                <span class="badge bg-secondary me-1">Veri Analizi</span>
+                            </div>
+                            <h6>İlerleme Durumu:</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#topic2Modal">
+                                Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Derin Öğrenme - Konu 3 -->
+                <div class="col-md-6 col-lg-4 mb-4 topic-card" data-category="derin-ogrenme" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-network-wired fa-2x me-3 text-primary"></i>
+                                <h4 class="card-title mb-0">Derin Öğrenme Temelleri</h4>
+                            </div>
+                            <p class="card-text">Yapay sinir ağları, aktivasyon fonksiyonları, geriye yayılım algoritması ve optimize ediciler. İleri beslemeli ve evrişimli ağların çalışma prensipleri.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Sinir Ağları</span>
+                                <span class="badge bg-secondary me-1">Matematik</span>
+                            </div>
+                            <h6>İlerleme Durumu:</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#topic3Modal">
+                                Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Derin Öğrenme - Konu 4 -->
+                <div class="col-md-6 col-lg-4 mb-4 topic-card" data-category="derin-ogrenme" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-layer-group fa-2x me-3 text-primary"></i>
+                                <h4 class="card-title mb-0">CNN (Evrişimli Sinir Ağları)</h4>
+                            </div>
+                            <p class="card-text">Görüntü işleme için tasarlanmış derin öğrenme modelleri. Evrişim katmanları, havuzlama işlemleri ve popüler CNN mimarileri (VGG, ResNet, vb.)</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Derin Öğrenme</span>
+                                <span class="badge bg-secondary me-1">Görüntü İşleme</span>
+                            </div>
+                            <h6>İlerleme Durumu:</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#topic4Modal">
+                                Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NLP - Konu 5 -->
+                <div class="col-md-6 col-lg-4 mb-4 topic-card" data-category="nlp" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-comment-dots fa-2x me-3 text-primary"></i>
+                                <h4 class="card-title mb-0">Doğal Dil İşleme Temelleri</h4>
+                            </div>
+                            <p class="card-text">Metin verilerinin işlenmesi ve analizi için yöntemler. Tokenizasyon, kelime gömme (word embeddings), ve metin sınıflandırma teknikleri.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">NLP</span>
+                                <span class="badge bg-secondary me-1">Metin İşleme</span>
+                            </div>
+                            <h6>İlerleme Durumu:</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#topic5Modal">
+                                Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bilgisayarlı Görü - Konu 6 -->
+                <div class="col-md-6 col-lg-4 mb-4 topic-card" data-category="goruntu" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-eye fa-2x me-3 text-primary"></i>
+                                <h4 class="card-title mb-0">Görüntü İşleme Temelleri</h4>
+                            </div>
+                            <p class="card-text">Dijital görüntü işleme ve bilgisayarlı görünün temel kavramları. Kenar tespiti, filtreleme ve öznitelik çıkarımı teknikleri.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Bilgisayarlı Görü</span>
+                                <span class="badge bg-secondary me-1">Görüntü İşleme</span>
+                            </div>
+                            <h6>İlerleme Durumu:</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#topic6Modal">
+                                Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Konu Modal Pencereleri -->
+    <!-- Konu 1 Modal -->
+    <div class="modal fade" id="topic1Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-brain me-2 text-primary"></i> Denetimli Öğrenme</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Öğrenilen Kavramlar</h5>
+                    <ul>
+                        <li>Regresyon algoritmaları (Doğrusal, Polinomyal, Lojistik)</li>
+                        <li>Sınıflandırma algoritmaları (SVM, Karar Ağaçları, Random Forest)</li>
+                        <li>Overfitting ve Underfitting</li>
+                        <li>Çapraz doğrulama teknikleri</li>
+                        <li>Hiperparametre optimizasyonu</li>
+                        <li>Metrik seçimi ve model değerlendirme</li>
+                    </ul>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+# Basit bir regresyon modeli örneği
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+
+# Veri oluşturma
+X = np.random.rand(100, 1) * 10
+y = 2 * X + 1 + np.random.randn(100, 1)
+
+# Veriyi eğitim ve test kümelerine ayırma
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Model eğitimi
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Tahmin
+y_pred = model.predict(X_test)
+
+# Model değerlendirme
+mse = mean_squared_error(y_test, y_pred)
+print(f'Katsayı: {model.coef_[0][0]:.4f}')
+print(f'Sabit: {model.intercept_[0]:.4f}')
+print(f'MSE: {mse:.4f}')
+</code></pre>
+                    
+                    <h5>Öğrenme Kaynakları</h5>
+                    <ul>
+                        <li><a href="#" target="_blank">Scikit-Learn Dokümantasyonu</a></li>
+                        <li><a href="#" target="_blank">Andrew Ng's Machine Learning Course (Coursera)</a></li>
+                        <li><a href="#" target="_blank">Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konu 2 Modal -->
+    <div class="modal fade" id="topic2Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-cogs me-2 text-primary"></i> Denetimsiz Öğrenme</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Öğrenilen Kavramlar</h5>
+                    <ul>
+                        <li>Kümeleme algoritmaları (K-Means, DBSCAN, Hierarchical Clustering)</li>
+                        <li>Boyut indirgeme teknikleri (PCA, t-SNE, UMAP)</li>
+                        <li>Anomali tespiti yöntemleri (Isolation Forest, One-Class SVM)</li>
+                        <li>Yoğunluk tahmin algoritmaları (Gaussian Mixture Models)</li>
+                        <li>Kendi kendine organize olan haritalar (SOM)</li>
+                        <li>Veri görselleştirme tekniklerinin denetimsiz öğrenme ile entegrasyonu</li>
+                    </ul>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+# Scikit-learn ile K-Means kümeleme örneği
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+
+# Örnek veri oluşturma
+X, _ = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=42)
+
+# Veriyi ölçeklendirme
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# Optimal küme sayısını belirlemek için Elbow yöntemi
+inertia = []
+for k in range(1, 11):
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    kmeans.fit(X_scaled)
+    inertia.append(kmeans.inertia_)
+
+# K-Means modelini oluşturma ve uygulama
+k = 4  # Optimal küme sayısı
+kmeans = KMeans(n_clusters=k, random_state=42)
+clusters = kmeans.fit_predict(X_scaled)
+
+# PCA ile görselleştirme
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)
+
+# Her bir küme için merkez noktaları
+centers = pca.transform(kmeans.cluster_centers_)
+
+# Sonuçların değerlendirilmesi ve yorumlanması
+print(f"Küme merkezleri: \n{kmeans.cluster_centers_}")
+print(f"Her kümedeki örnek sayısı: {np.bincount(clusters)}")
+</code></pre>
+                    
+                    <h5>Uygulama Alanları</h5>
+                    <ul>
+                        <li>Müşteri segmentasyonu ve pazar analizi</li>
+                        <li>Anomali ve dolandırıcılık tespiti</li>
+                        <li>Öneri sistemleri (collaborative filtering)</li>
+                        <li>Görüntü sıkıştırma ve segmentasyon</li>
+                        <li>Doküman ve konu modelleme</li>
+                    </ul>
+                    
+                    <h5>Öğrenme Kaynakları</h5>
+                    <ul>
+                        <li><a href="#" target="_blank">Scikit-Learn: Clustering Algorithms</a></li>
+                        <li><a href="#" target="_blank">Unsupervised Learning and Data Clustering (Udemy)</a></li>
+                        <li><a href="#" target="_blank">Pattern Recognition and Machine Learning - Christopher Bishop</a></li>
+                        <li><a href="#" target="_blank">Stanford CS246: Mining Massive Data Sets</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konu 3 Modal -->
+    <div class="modal fade" id="topic3Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-network-wired me-2 text-primary"></i> Derin Öğrenme Temelleri</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Öğrenilen Kavramlar</h5>
+                    <ul>
+                        <li>Yapay Sinir Ağları yapısı ve çalışma prensibi</li>
+                        <li>Aktivasyon fonksiyonları (ReLU, Sigmoid, Tanh)</li>
+                        <li>İleri yayılım ve geriye yayılım algoritması</li>
+                        <li>Kayıp fonksiyonları ve gradyan inişi</li>
+                        <li>Optimize ediciler (SGD, Adam, RMSprop)</li>
+                        <li>Dropout ve Batch Normalization gibi düzenlileştirme teknikleri</li>
+                    </ul>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+# TensorFlow ile basit bir sinir ağı modeli
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.optimizers import Adam
+
+# Model oluşturma
+model = Sequential([
+    Dense(128, activation='relu', input_shape=(784,)),
+    Dropout(0.2),
+    Dense(64, activation='relu'),
+    Dropout(0.2),
+    Dense(10, activation='softmax')
+])
+
+# Model derleme
+model.compile(
+    optimizer=Adam(learning_rate=0.001),
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy']
+)
+
+# Model özeti
+model.summary()
+
+# Eğitim (MNIST veri seti ile)
+# model.fit(x_train, y_train, epochs=10, batch_size=32, validation_split=0.2)
+</code></pre>
+                    
+                    <h5>Öğrenme Kaynakları</h5>
+                    <ul>
+                        <li><a href="#" target="_blank">Deep Learning Specialization (Coursera)</a></li>
+                        <li><a href="#" target="_blank">TensorFlow Dokümantasyonu</a></li>
+                        <li><a href="#" target="_blank">Deep Learning with Python - François Chollet</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konu 4 Modal -->
+    <div class="modal fade" id="topic4Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-layer-group me-2 text-primary"></i> CNN (Evrişimli Sinir Ağları)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Öğrenilen Kavramlar</h5>
+                    <ul>
+                        <li>CNN mimarisi ve temel bileşenleri</li>
+                        <li>Evrişim (Convolution) işlemi ve filtreler</li>
+                        <li>Havuzlama (Pooling) katmanları (Max Pooling, Average Pooling)</li>
+                        <li>Tam bağlantılı katmanlar ve softmax sınıflandırıcı</li>
+                        <li>Popüler CNN mimarileri (LeNet, AlexNet, VGG, ResNet, Inception)</li>
+                        <li>Transfer öğrenme ve önceden eğitilmiş modeller</li>
+                        <li>Data augmentation (veri artırma) teknikleri</li>
+                    </ul>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+# Keras ile temel bir CNN modeli
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+# Model mimarisi
+model = Sequential([
+    # İlk evrişim bloğu
+    Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(28, 28, 1)),
+    MaxPooling2D((2, 2)),
+    
+    # İkinci evrişim bloğu
+    Conv2D(64, (3, 3), activation='relu', padding='same'),
+    MaxPooling2D((2, 2)),
+    
+    # Üçüncü evrişim bloğu
+    Conv2D(128, (3, 3), activation='relu', padding='same'),
+    MaxPooling2D((2, 2)),
+    
+    # Düzleştirme ve tam bağlantılı katmanlar
+    Flatten(),
+    Dense(128, activation='relu'),
+    Dropout(0.5),
+    Dense(10, activation='softmax')  # 10 sınıflı bir problem için
+])
+
+# Model derleme
+model.compile(
+    optimizer='adam',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
+
+# Veri artırma (Data Augmentation)
+datagen = ImageDataGenerator(
+    rotation_range=10,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
+    zoom_range=0.1,
+    horizontal_flip=True
+)
+
+# Model özeti
+model.summary()
+</code></pre>
+                    
+                    <h5>Uygulama Alanları</h5>
+                    <ul>
+                        <li>Görüntü sınıflandırma ve tanıma</li>
+                        <li>Nesne tespiti (YOLO, SSD, Faster R-CNN)</li>
+                        <li>Görüntü segmentasyonu (U-Net, Mask R-CNN)</li>
+                        <li>Yüz tanıma ve duygu analizi</li>
+                        <li>Medikal görüntüleme ve teşhis</li>
+                        <li>Otonom araçlarda görüntü işleme</li>
+                    </ul>
+                    
+                    <h5>Öğrenme Kaynakları</h5>
+                    <ul>
+                        <li><a href="#" target="_blank">Stanford CS231n: Convolutional Neural Networks</a></li>
+                        <li><a href="#" target="_blank">Deep Learning Specialization - Course 4 (Coursera)</a></li>
+                        <li><a href="#" target="_blank">TensorFlow CNN Dokümantasyonu</a></li>
+                        <li><a href="#" target="_blank">PyTorch Computer Vision Cookbook - Valliappa Lakshmanan</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konu 5 Modal -->
+    <div class="modal fade" id="topic5Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-comment-dots me-2 text-primary"></i> Doğal Dil İşleme Temelleri</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Öğrenilen Kavramlar</h5>
+                    <ul>
+                        <li>Metin ön işleme teknikleri (tokenizasyon, lemmatizasyon, stemming)</li>
+                        <li>Kelime temsilleri (one-hot encoding, word embeddings)</li>
+                        <li>N-gram modelleri ve istatistiksel yaklaşımlar</li>
+                        <li>Dil modelleri ve olasılık dağılımları</li>
+                        <li>Vektör uzayı modelleri (TF-IDF, Bag of Words)</li>
+                        <li>Word2Vec, GloVe ve FastText gibi kelime gömme teknikleri</li>
+                        <li>Metin sınıflandırma ve duygu analizi</li>
+                        <li>İsim varlık tanıma (NER) ve bilgi çıkarımı</li>
+                    </ul>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+# NLTK ile basit metin işleme
+import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer, PorterStemmer
+from nltk.tag import pos_tag
+from nltk.chunk import ne_chunk
+import string
+
+# Gerekli NLTK kaynakları
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+
+# Örnek metin
+text = """Doğal dil işleme, yapay zekanın önemli bir alt alanıdır. Bu teknoloji, bilgisayarların 
+          insan dilini anlama, yorumlama ve üretme yeteneğini geliştirir. Google, Amazon ve OpenAI 
+          gibi şirketler bu alanda önemli çalışmalar yapmaktadır."""
+
+# Cümlelere ayırma
+sentences = sent_tokenize(text)
+print(f"Cümleler: {sentences}")
+
+# Kelimelere ayırma
+tokens = word_tokenize(text)
+print(f"Tokenler: {tokens[:10]}...")
+
+# Stopwords ve noktalama işaretlerini çıkarma
+stop_words = set(stopwords.words('english'))
+filtered_tokens = [word.lower() for word in tokens if word.lower() not in stop_words and word not in string.punctuation]
+print(f"Filtrelenmiş tokenler: {filtered_tokens[:10]}...")
+
+# Lemmatizasyon
+lemmatizer = WordNetLemmatizer()
+lemmatized = [lemmatizer.lemmatize(word) for word in filtered_tokens]
+print(f"Lemmatize edilmiş: {lemmatized[:10]}...")
+
+# POS Tagging ve NER
+pos_tags = pos_tag(tokens)
+named_entities = ne_chunk(pos_tags)
+print(f"POS Tags: {pos_tags[:10]}...")
+</code></pre>
+                    
+                    <h5>Modern NLP Mimarileri</h5>
+                    <ul>
+                        <li>Recurrent Neural Networks (RNN, LSTM, GRU)</li>
+                        <li>Transformer mimarisi ve dikkat mekanizması</li>
+                        <li>BERT ve bağlamsal kelime gömme modelleri</li>
+                        <li>GPT ve otomatik metin oluşturma</li>
+                        <li>T5 ve çok görevli NLP modelleri</li>
+                    </ul>
+                    
+                    <h5>Öğrenme Kaynakları</h5>
+                    <ul>
+                        <li><a href="#" target="_blank">Natural Language Processing with Python - NLTK Book</a></li>
+                        <li><a href="#" target="_blank">Stanford CS224n: Natural Language Processing with Deep Learning</a></li>
+                        <li><a href="#" target="_blank">Hugging Face Transformers Dokümantasyonu</a></li>
+                        <li><a href="#" target="_blank">Speech and Language Processing - Dan Jurafsky & James H. Martin</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konu 6 Modal -->
+    <div class="modal fade" id="topic6Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-eye me-2 text-primary"></i> Görüntü İşleme Temelleri</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Öğrenilen Kavramlar</h5>
+                    <ul>
+                        <li>Dijital görüntü temelleri (piksel, kanal, çözünürlük, renk uzayları)</li>
+                        <li>Görüntü filtreleme ve yumuşatma (Gaussian, Median, Bilateral)</li>
+                        <li>Kenar tespiti (Sobel, Canny, Laplacian)</li>
+                        <li>Morfolojik işlemler (erozyon, genişleme, açma, kapama)</li>
+                        <li>Öznitelik çıkarma (SIFT, SURF, ORB)</li>
+                        <li>Görüntü histogramları ve histogram eşitleme</li>
+                        <li>Nesne segmentasyonu ve kontur analizi</li>
+                        <li>Geometrik dönüşümler (döndürme, ölçekleme, perspektif)</li>
+                    </ul>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+# OpenCV ile temel görüntü işleme
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Görüntüyü oku ve görüntüle
+img = cv2.imread('sample_image.jpg')
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # OpenCV BGR'den RGB'ye dönüşüm
+
+# Gri tonlamalı versiyona dönüştürme
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Gaussian bulanıklaştırma
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+
+# Canny kenar dedektörü
+edges = cv2.Canny(blurred, 50, 150)
+
+# Konturları bulma
+contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+contour_img = img.copy()
+cv2.drawContours(contour_img, contours, -1, (0, 255, 0), 2)
+
+# Histogram analizi
+hist = cv2.calcHist([gray], [0], None, [256], [0, 256])
+hist_eq = cv2.equalizeHist(gray)  # Histogram eşitleme
+
+# Öznitelik dedektörü
+sift = cv2.SIFT_create()
+keypoints, descriptors = sift.detectAndCompute(gray, None)
+kp_img = cv2.drawKeypoints(img_rgb, keypoints, None, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+
+# Thresholding (eşikleme)
+_, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+adaptive_thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+</code></pre>
+                    
+                    <h5>Bilgisayarlı Görü ve Yapay Zeka Entegrasyonu</h5>
+                    <ul>
+                        <li>CNN'ler ile görüntü sınıflandırma</li>
+                        <li>Nesne tanıma ve algılama (YOLO, SSD, Faster R-CNN)</li>
+                        <li>Semantik segmentasyon ve instance segmentasyon</li>
+                        <li>Yüz tanıma ve duygu analizi</li>
+                        <li>Poz tahmini ve hareket analizi</li>
+                        <li>Görüntüden metin çıkarma (OCR)</li>
+                        <li>Optik akış ve hareket tespiti</li>
+                    </ul>
+                    
+                    <h5>Öğrenme Kaynakları</h5>
+                    <ul>
+                        <li><a href="#" target="_blank">OpenCV Dokümantasyonu ve Öğreticileri</a></li>
+                        <li><a href="#" target="_blank">PyImageSearch Kaynakları</a></li>
+                        <li><a href="#" target="_blank">Computer Vision: Algorithms and Applications - Richard Szeliski</a></li>
+                        <li><a href="#" target="_blank">Stanford CS231n: Convolutional Neural Networks for Visual Recognition</a></li>
+                        <li><a href="#" target="_blank">Deep Learning for Computer Vision with Python - Adrian Rosebrock</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Sohbet Butonu -->
+    <div class="chat-button" id="chat-icon">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- Sohbet Modal Penceresi -->
+    <div class="modal fade" id="chat-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-robot me-2"></i> AI Asistanı
+                    </h5>
+                    <button type="button" class="btn-close" id="chat-close" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chat-messages">
+                            <!-- Mesajlar buraya dinamik olarak eklenecek -->
+                        </div>
+                        <form id="chat-form" class="chat-input-form">
+                            <div class="input-group">
+                                <textarea id="user-input" class="form-control" placeholder="Yapay zeka hakkında bir soru sorun..." rows="1"></textarea>
+                                <button id="send-button" class="btn btn-primary" type="submit">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <small class="text-muted">Demo Sürüm</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="mb-0">
+                        <i class="fas fa-copyright"></i> 2025 AI Öğrenim Yolculuğum
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div id="current-date-time">
+                        <span id="current-date"></span> - 
+                        <span id="current-time"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="mailto:y53@tuta.io" class="text-white contact-icon" title="E-posta Gönder">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animasyon -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Prism.js - Kod Vurgulama -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/ai-chat.js"></script>
+</body>
+</html>

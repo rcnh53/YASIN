@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaynak Kütüphanesi - AI Öğrenim Yolculuğum</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animasyon Kütüphanesi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-robot me-2"></i>AI Öğrenim Yolculuğum
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Ana Sayfa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="konular.html">
+                            <i class="fas fa-book-open me-1"></i>Öğrenilen Konular
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="kaynaklar.html">
+                            <i class="fas fa-bookmark me-1"></i>Kaynak Kütüphanesi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projeler.html">
+                            <i class="fas fa-code me-1"></i>Proje Günlüğü
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sayfa Başlığı -->
+    <div class="bg-light py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-center" data-aos="fade-up">Kaynak Kütüphanesi</h1>
+            <p class="lead text-center" data-aos="fade-up" data-aos-delay="200">Yapay zeka öğrenimimde faydalı bulduğum ve tavsiye ettiğim kaynaklar.</p>
+        </div>
+    </div>
+
+    <!-- Arama ve Filtreleme -->
+    <section class="py-4">
+        <div class="container">
+            <div class="row mb-4" data-aos="fade-up">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" id="resource-search" placeholder="Kaynak ara...">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" id="resource-filter">
+                        <option value="all" selected>Tüm Kategoriler</option>
+                        <option value="video">Videolar</option>
+                        <option value="article">Makaleler</option>
+                        <option value="book">Kitaplar</option>
+                        <option value="course">Kurslar</option>
+                        <option value="tool">Araçlar</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Kaynak Türleri Dağılımı -->
+            <div class="row mb-5">
+                <div class="col-lg-6 mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title text-center mb-3">Kaynak Türleri Dağılımı</h4>
+                            <div class="chart-container" style="position: relative; height:40vh; max-height: 300px;">
+                                <canvas id="resourceTypesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kaynaklar -->
+    <section class="py-4">
+        <div class="container">
+            <div class="row" id="resources-container">
+                <!-- Video Kaynağı 1 -->
+                <div class="col-md-6 col-lg-4 mb-4 resource-card" data-category="video" data-aos="flip-left" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="resource-icon mb-3">
+                                <i class="fas fa-video fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Deep Learning Specialization</h4>
+                            <p class="card-text">Andrew Ng tarafından hazırlanan, derin öğrenmenin temellerinden ileri konularına kadar kapsamlı bir kurs serisi.</p>
+                            <div class="resource-meta mb-3">
+                                <span class="badge bg-primary">Video Kurs</span>
+                                <span class="badge bg-secondary">Coursera</span>
+                                <span class="badge bg-light text-dark">İngilizce</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Zorluk: Orta</small>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" class="btn btn-outline-primary btn-sm">
+                                Kaynağa Git <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kitap Kaynağı 1 -->
+                <div class="col-md-6 col-lg-4 mb-4 resource-card" data-category="book" data-aos="flip-left" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="resource-icon mb-3">
+                                <i class="fas fa-book fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Hands-On Machine Learning</h4>
+                            <p class="card-text">Scikit-Learn, Keras ve TensorFlow ile uygulamalı makine öğrenmesi. Teori ve pratiği birleştiren kapsamlı bir kaynak.</p>
+                            <div class="resource-meta mb-3">
+                                <span class="badge bg-primary">Kitap</span>
+                                <span class="badge bg-secondary">O'Reilly</span>
+                                <span class="badge bg-light text-dark">İngilizce</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Zorluk: Orta-İleri</small>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/" target="_blank" class="btn btn-outline-primary btn-sm">
+                                Kaynağa Git <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Makale Kaynağı 1 -->
+                <div class="col-md-6 col-lg-4 mb-4 resource-card" data-category="article" data-aos="flip-left" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="resource-icon mb-3">
+                                <i class="fas fa-file-alt fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">The Illustrated Transformer</h4>
+                            <p class="card-text">Transformer mimarisinin çalışma prensibini görsellerle açıklayan kapsamlı bir makale. NLP alanındaki modern mimarileri anlamak için harika bir kaynak.</p>
+                            <div class="resource-meta mb-3">
+                                <span class="badge bg-primary">Makale</span>
+                                <span class="badge bg-secondary">Jay Alammar Blog</span>
+                                <span class="badge bg-light text-dark">İngilizce</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Zorluk: Orta</small>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="http://jalammar.github.io/illustrated-transformer/" target="_blank" class="btn btn-outline-primary btn-sm">
+                                Kaynağa Git <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Kaynağı 2 -->
+                <div class="col-md-6 col-lg-4 mb-4 resource-card" data-category="video" data-aos="flip-left" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="resource-icon mb-3">
+                                <i class="fas fa-video fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Stanford CS231n</h4>
+                            <p class="card-text">Evrişimli Sinir Ağları (CNN) ve görüntü tanıma konusunda Stanford Üniversitesi'nin sunduğu kapsamlı bir kurs.</p>
+                            <div class="resource-meta mb-3">
+                                <span class="badge bg-primary">Video Kurs</span>
+                                <span class="badge bg-secondary">Stanford</span>
+                                <span class="badge bg-light text-dark">İngilizce</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Zorluk: İleri</small>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="http://cs231n.stanford.edu/" target="_blank" class="btn btn-outline-primary btn-sm">
+                                Kaynağa Git <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool Kaynağı 1 -->
+                <div class="col-md-6 col-lg-4 mb-4 resource-card" data-category="tool" data-aos="flip-left" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="resource-icon mb-3">
+                                <i class="fas fa-tools fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Google Colab</h4>
+                            <p class="card-text">Google'ın sunduğu, ücretsiz GPU erişimi ile Python ve makine öğrenmesi projelerini çalıştırabileceğiniz bulut tabanlı Jupyter not defteri.</p>
+                            <div class="resource-meta mb-3">
+                                <span class="badge bg-primary">Araç</span>
+                                <span class="badge bg-secondary">Google</span>
+                                <span class="badge bg-success">Ücretsiz</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Zorluk: Başlangıç</small>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="https://colab.research.google.com/" target="_blank" class="btn btn-outline-primary btn-sm">
+                                Kaynağa Git <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Kaynağı 1 -->
+                <div class="col-md-6 col-lg-4 mb-4 resource-card" data-category="course" data-aos="flip-left" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="resource-icon mb-3">
+                                <i class="fas fa-graduation-cap fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">fast.ai</h4>
+                            <p class="card-text">Uygulamalı derin öğrenme üzerine odaklanan ücretsiz bir kurs. "Önce kod, sonra teori" yaklaşımıyla pratik beceriler kazandırır.</p>
+                            <div class="resource-meta mb-3">
+                                <span class="badge bg-primary">Kurs</span>
+                                <span class="badge bg-secondary">fast.ai</span>
+                                <span class="badge bg-success">Ücretsiz</span>
+                                <span class="badge bg-light text-dark">İngilizce</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Zorluk: Başlangıç-Orta</small>
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="https://www.fast.ai/" target="_blank" class="btn btn-outline-primary btn-sm">
+                                Kaynağa Git <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kaynak Önerisi -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4" data-aos="fade-up">Kaynak Öner</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Faydalı bulduğunuz yapay zeka kaynaklarını benimle paylaşın.</p>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-body">
+                            <form id="resource-suggestion-form">
+                                <div class="mb-3">
+                                    <label for="resource-name" class="form-label">Kaynak Adı</label>
+                                    <input type="text" class="form-control" id="resource-name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resource-url" class="form-label">URL</label>
+                                    <input type="url" class="form-control" id="resource-url" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resource-type" class="form-label">Kaynak Türü</label>
+                                    <select class="form-select" id="resource-type" required>
+                                        <option value="">Seçiniz...</option>
+                                        <option value="video">Video</option>
+                                        <option value="article">Makale</option>
+                                        <option value="book">Kitap</option>
+                                        <option value="course">Kurs</option>
+                                        <option value="tool">Araç</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resource-description" class="form-label">Açıklama</label>
+                                    <textarea class="form-control" id="resource-description" rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resource-submitter" class="form-label">Adınız (İsteğe bağlı)</label>
+                                    <input type="text" class="form-control" id="resource-submitter">
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary">Öner</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Sohbet Butonu -->
+    <div class="chat-button" id="chat-icon">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- Sohbet Modal Penceresi -->
+    <div class="modal fade" id="chat-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-robot me-2"></i> AI Asistanı
+                    </h5>
+                    <button type="button" class="btn-close" id="chat-close" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chat-messages">
+                            <!-- Mesajlar buraya dinamik olarak eklenecek -->
+                        </div>
+                        <form id="chat-form" class="chat-input-form">
+                            <div class="input-group">
+                                <textarea id="user-input" class="form-control" placeholder="Yapay zeka hakkında bir soru sorun..." rows="1"></textarea>
+                                <button id="send-button" class="btn btn-primary" type="submit">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <small class="text-muted">Demo Sürüm</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="mb-0">
+                        <i class="fas fa-copyright"></i> 2025 AI Öğrenim Yolculuğum
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div id="current-date-time">
+                        <span id="current-date"></span> - 
+                        <span id="current-time"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="mailto:y53@tuta.io" class="text-white contact-icon" title="E-posta Gönder">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animasyon -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/ai-chat.js"></script>
+</body>
+</html>

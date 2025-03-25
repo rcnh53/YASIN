@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Günlüğü - AI Öğrenim Yolculuğum</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animasyon Kütüphanesi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Prism.js - Kod Vurgulama -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-robot me-2"></i>AI Öğrenim Yolculuğum
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Ana Sayfa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="konular.html">
+                            <i class="fas fa-book-open me-1"></i>Öğrenilen Konular
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kaynaklar.html">
+                            <i class="fas fa-bookmark me-1"></i>Kaynak Kütüphanesi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="projeler.html">
+                            <i class="fas fa-code me-1"></i>Proje Günlüğü
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sayfa Başlığı -->
+    <div class="bg-light py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-center" data-aos="fade-up">Proje Günlüğü</h1>
+            <p class="lead text-center" data-aos="fade-up" data-aos-delay="200">Yapay zeka öğrenme yolculuğum sırasında gerçekleştirdiğim projeler.</p>
+        </div>
+    </div>
+
+    <!-- Proje İstatistikleri -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Proje İlerleme Durumu</h3>
+                            <div class="chart-container">
+                                <canvas id="projectProgressChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Kullanılan Teknolojiler</h3>
+                            <div class="chart-container">
+                                <canvas id="usedTechnologiesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zaman Çizelgesi -->
+    <section class="timeline-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Proje Zaman Çizelgesi</h2>
+            
+            <div class="timeline">
+                <!-- Proje 1 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">
+                        Mart 2025
+                    </div>
+                    <div class="timeline-content">
+                        <div class="card shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=500" class="card-img-top timeline-img" alt="Görüntü Sınıflandırma Projesi">
+                            <div class="card-body">
+                                <h4 class="card-title">Görüntü Sınıflandırma Uygulaması</h4>
+                                <p class="card-text">CNN kullanarak geliştirdiğim bu uygulama, yüklenen görüntüleri 10 farklı kategoriye (köpek, kedi, araba, uçak, vb.) ayırabiliyor. TensorFlow ve Keras kütüphanelerini kullanarak oluşturduğum model, %92 doğruluk oranına ulaştı.</p>
+                                <div class="badges mb-3">
+                                    <span class="badge bg-primary">Python</span>
+                                    <span class="badge bg-secondary">TensorFlow</span>
+                                    <span class="badge bg-info">Keras</span>
+                                    <span class="badge bg-success">Flask</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="project-status completed">Tamamlandı</span>
+                                    <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                                        Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proje 2 -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">
+                        Şubat 2025
+                    </div>
+                    <div class="timeline-content">
+                        <div class="card shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=500" class="card-img-top timeline-img" alt="NLP Duygu Analizi Projesi">
+                            <div class="card-body">
+                                <h4 class="card-title">NLP ile Duygu Analizi</h4>
+                                <p class="card-text">Sosyal medya yorumlarını analiz ederek olumlu, olumsuz veya nötr olarak sınıflandıran bir duygu analizi modeli. BERT modeli üzerine ince ayar yaparak Twitter verileri için optimize ettim.</p>
+                                <div class="badges mb-3">
+                                    <span class="badge bg-primary">Python</span>
+                                    <span class="badge bg-secondary">PyTorch</span>
+                                    <span class="badge bg-info">Transformers</span>
+                                    <span class="badge bg-success">BERT</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="project-status in-progress">Devam Ediyor</span>
+                                    <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">
+                                        Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proje 3 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">
+                        Ocak 2025
+                    </div>
+                    <div class="timeline-content">
+                        <div class="card shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?q=80&w=500" class="card-img-top timeline-img" alt="Film Öneri Sistemi Projesi">
+                            <div class="card-body">
+                                <h4 class="card-title">Film Öneri Sistemi</h4>
+                                <p class="card-text">İşbirlikçi filtreleme ve içerik tabanlı filtreleme yöntemlerini birleştiren hibrit bir film öneri sistemi. Kullanıcı tercihlerini ve film özelliklerini analiz ederek kişiselleştirilmiş öneriler sunuyor.</p>
+                                <div class="badges mb-3">
+                                    <span class="badge bg-primary">Python</span>
+                                    <span class="badge bg-secondary">Scikit-Learn</span>
+                                    <span class="badge bg-info">Pandas</span>
+                                    <span class="badge bg-success">Flask</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="project-status completed">Tamamlandı</span>
+                                    <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project3Modal">
+                                        Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proje 4 -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">
+                        Aralık 2024
+                    </div>
+                    <div class="timeline-content">
+                        <div class="card shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&w=500" class="card-img-top timeline-img" alt="AI Chatbot Projesi">
+                            <div class="card-body">
+                                <h4 class="card-title">AI Chatbot</h4>
+                                <p class="card-text">Doğal dil işleme yeteneklerine sahip, müşteri hizmetleri için tasarlanmış bir chatbot. FAQ yanıtları verebiliyor ve basit konuşmalar yapabiliyor.</p>
+                                <div class="badges mb-3">
+                                    <span class="badge bg-primary">Python</span>
+                                    <span class="badge bg-secondary">NLTK</span>
+                                    <span class="badge bg-info">Rasa</span>
+                                    <span class="badge bg-success">TensorFlow</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="project-status in-progress">Devam Ediyor</span>
+                                    <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project4Modal">
+                                        Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proje 5 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">
+                        Kasım 2024
+                    </div>
+                    <div class="timeline-content">
+                        <div class="card shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?q=80&w=500" class="card-img-top timeline-img" alt="Nesne Tanıma Projesi">
+                            <div class="card-body">
+                                <h4 class="card-title">Nesne Tanıma Uygulaması</h4>
+                                <p class="card-text">YOLO (You Only Look Once) algoritması kullanarak gerçek zamanlı nesne tanıma uygulaması. Webcam üzerinden gelen görüntülerde nesneleri tanıyıp etiketleyebiliyor.</p>
+                                <div class="badges mb-3">
+                                    <span class="badge bg-primary">Python</span>
+                                    <span class="badge bg-secondary">OpenCV</span>
+                                    <span class="badge bg-info">YOLOv5</span>
+                                    <span class="badge bg-success">PyTorch</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="project-status planning">Planlama</span>
+                                    <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project5Modal">
+                                        Detaylar <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proje Modal Pencereleri -->
+    <!-- Proje 1 Modal -->
+    <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-code me-2 text-primary"></i> Görüntü Sınıflandırma Uygulaması</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=500" class="img-fluid rounded" alt="Görüntü Sınıflandırma Projesi">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Proje Detayları</h5>
+                            <p>Bu projede, günlük hayatta sıkça karşılaşılan nesneleri tanıyabilen bir görüntü sınıflandırma modeli geliştirdim. CNN (Evrişimli Sinir Ağları) kullanarak eğitilen model, CIFAR-10 veri seti üzerinde %92 doğruluk oranına ulaştı.</p>
+                            <div class="badges mb-3">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-secondary">TensorFlow</span>
+                                <span class="badge bg-info">Keras</span>
+                                <span class="badge bg-success">Flask</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <strong class="me-2">Durum:</strong>
+                                <span class="project-status completed">Tamamlandı</span>
+                            </div>
+                            <div>
+                                <strong>Tarih:</strong> Mart 2025
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5>Teknik Detaylar</h5>
+                    <p>Model mimarisi, birkaç evrişimli katman, havuzlama katmanları ve tam bağlantılı katmanlardan oluşuyor. Transfer öğrenme tekniğiyle MobileNetV2 mimarisini kullandım ve kendi sınıflandırma katmanımı ekledim.</p>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+import tensorflow as tf
+from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
+from tensorflow.keras.models import Model
+
+# Transfer öğrenme için temel model
+base_model = MobileNetV2(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
+
+# Temel model katmanlarını donduralım
+for layer in base_model.layers:
+    layer.trainable = False
+
+# Model oluşturma
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+x = Dense(1024, activation='relu')(x)
+predictions = Dense(10, activation='softmax')(x)
+
+model = Model(inputs=base_model.input, outputs=predictions)
+
+# Model derleme
+model.compile(
+    optimizer='adam',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
+                    </code></pre>
+                    
+                    <h5>Öğrenilen Beceriler</h5>
+                    <ul>
+                        <li>Evrişimli Sinir Ağları (CNN) tasarımı ve eğitimi</li>
+                        <li>Transfer öğrenme ile model geliştirme</li>
+                        <li>Görüntü ön işleme ve veri artırma teknikleri</li>
+                        <li>Model optimizasyonu ve hiper-parametre ayarlama</li>
+                        <li>Flask ile web uygulaması entegrasyonu</li>
+                    </ul>
+                    
+                    <h5>Zorluklar ve Çözümler</h5>
+                    <p>Modelin aşırı öğrenme (overfitting) sorunu başlangıçta zorlayıcıydı. Çözüm olarak dropout katmanları, veri artırma teknikleri ve erken durdurma (early stopping) stratejilerini uyguladım. Ayrıca, model boyutunu küçültmek için MobileNetV2 mimarisini seçerek, web uygulamasında daha hızlı çalışmasını sağladım.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary"><i class="fab fa-github me-1"></i> GitHub Deposu</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proje 2 Modal - NLP ile Duygu Analizi -->
+    <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-comment-dots me-2 text-primary"></i> NLP ile Duygu Analizi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=500" class="img-fluid rounded" alt="NLP Duygu Analizi Projesi">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Proje Detayları</h5>
+                            <p>Bu projede, sosyal medya yorumlarını analiz ederek olumlu, olumsuz veya nötr olarak sınıflandıran bir duygu analizi modeli geliştirdim. Özellikle Twitter verileri üzerinde yüksek doğrulukta çalışması için BERT modelini fine-tune ettim.</p>
+                            <div class="badges mb-3">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-secondary">PyTorch</span>
+                                <span class="badge bg-info">Transformers</span>
+                                <span class="badge bg-success">BERT</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <strong class="me-2">Durum:</strong>
+                                <span class="project-status in-progress">Devam Ediyor</span>
+                            </div>
+                            <div>
+                                <strong>Tarih:</strong> Şubat 2025
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5>Veri Seti ve Ön İşleme</h5>
+                    <p>Projeyi geliştirmek için Twitter Sentiment140 veri setini kullandım. Veri setini dengeli bir eğitim, doğrulama ve test setine böldüm. Metin ön işleme adımları arasında tokenizasyon, URL ve kullanıcı adı normalizasyonu, emoji çevirisi ve yazım düzeltme yer alıyor.</p>
+                    
+                    <h5>Model Mimarisi</h5>
+                    <p>BERT-base modeli üzerine bir sınıflandırma katmanı ekleyerek fine-tuning yaptım. Modelin performansını artırmak için hiperparametre optimizasyonu gerçekleştirdim ve çapraz doğrulama kullandım.</p>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+import torch
+from transformers import BertTokenizer, BertForSequenceClassification
+from torch.utils.data import DataLoader, TensorDataset
+from sklearn.metrics import accuracy_score, f1_score
+
+# Tokenizer
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+
+# Model
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=3)
+
+# Metinleri tokenize etme ve model girdilerine dönüştürme
+def preprocess_data(texts, labels=None):
+    inputs = tokenizer(texts, padding=True, truncation=True, return_tensors="pt", max_length=128)
+    if labels is not None:
+        return TensorDataset(inputs['input_ids'], inputs['attention_mask'], torch.tensor(labels))
+    return inputs
+
+# Eğitim döngüsü (örnek)
+def train(model, train_dataloader, optimizer, epochs=3):
+    model.train()
+    for epoch in range(epochs):
+        for batch in train_dataloader:
+            input_ids, attention_mask, labels = batch
+            optimizer.zero_grad()
+            outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
+            loss = outputs.loss
+            loss.backward()
+            optimizer.step()
+            
+# Duygu analizi fonksiyonu
+def predict_sentiment(text, model, tokenizer):
+    model.eval()
+    inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=128)
+    with torch.no_grad():
+        outputs = model(**inputs)
+    probs = torch.nn.functional.softmax(outputs.logits, dim=1)
+    prediction = torch.argmax(probs, dim=1).item()
+    return ["Olumsuz", "Nötr", "Olumlu"][prediction]
+                    </code></pre>
+                    
+                    <h5>Zorluklar ve Çözümler</h5>
+                    <ul>
+                        <li><strong>Dengesiz veri:</strong> Bazı duygu kategorileri diğerlerine göre daha fazla örnekle temsil ediliyordu. Bu sorunu aşmak için sınıf ağırlıklandırma ve SMOTE tekniklerini kullandım.</li>
+                        <li><strong>Dil özellikleri:</strong> Twitter'a özgü kısaltmalar, hashtag'ler ve emojiler ile başa çıkmak için özel bir tokenizer geliştirdim.</li>
+                        <li><strong>Sınıflar arası karışıklık:</strong> Nötr metinleri olumlu/olumsuzdan ayırmak zordu. Bunu çözmek için daha zengin öznitelikler ve kesin sınıf eşikleri tanımladım.</li>
+                    </ul>
+                    
+                    <h5>Gelecek İyileştirmeler</h5>
+                    <ul>
+                        <li>Multi-lingual model desteği ekleyerek farklı dillerde duygu analizi yapabilme</li>
+                        <li>Emoji ve sarkastik ifadeleri daha iyi anlama için özel katmanlar</li>
+                        <li>Konu-bazlı duygu analizi eklemek (yalnızca genel duygu değil, belirli konulara yönelik duyguları tespit etmek)</li>
+                        <li>Analiz sonuçlarını görselleştiren bir dashboard oluşturma</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary"><i class="fab fa-github me-1"></i> GitHub Deposu</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proje 3 Modal - Film Öneri Sistemi -->
+    <div class="modal fade" id="project3Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-film me-2 text-primary"></i> Film Öneri Sistemi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?q=80&w=500" class="img-fluid rounded" alt="Film Öneri Sistemi Projesi">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Proje Detayları</h5>
+                            <p>Bu projede, kullanıcılara kişiselleştirilmiş film önerileri sunan hibrit bir öneri sistemi geliştirdim. İşbirlikçi filtreleme (collaborative filtering) ve içerik tabanlı filtreleme (content-based filtering) yöntemlerini birleştirerek hem kullanıcı tercihlerini hem de film özelliklerini değerlendiren bir sistem kurdum.</p>
+                            <div class="badges mb-3">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-secondary">Scikit-Learn</span>
+                                <span class="badge bg-info">Pandas</span>
+                                <span class="badge bg-success">Flask</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <strong class="me-2">Durum:</strong>
+                                <span class="project-status completed">Tamamlandı</span>
+                            </div>
+                            <div>
+                                <strong>Tarih:</strong> Ocak 2025
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5>Sistem Mimarisi</h5>
+                    <p>Öneri sistemim üç ana bileşenden oluşuyor:</p>
+                    <ol>
+                        <li><strong>İşbirlikçi Filtreleme Modülü:</strong> Kullanıcı-film etkileşim matrisini kullanarak benzer beğenilere sahip kullanıcıları belirler ve matris faktorizasyonu (SVD) kullanarak önerilerde bulunur.</li>
+                        <li><strong>İçerik Tabanlı Filtreleme Modülü:</strong> Film özelliklerini (tür, oyuncular, yönetmen, anahtar kelimeler) analiz ederek bir film vektör uzayı oluşturur ve kosinüs benzerliği kullanarak benzer filmleri önerir.</li>
+                        <li><strong>Hibrit Entegrasyon Katmanı:</strong> İki modülden gelen sonuçları ağırlıklandırarak birleştirir ve nihai öneri listesini oluşturur.</li>
+                    </ol>
+                    
+                    <h5>Veri Seti</h5>
+                    <p>Sistem, MovieLens 25M veri seti üzerinde eğitildi. Bu veri seti, 160,000'den fazla kullanıcının 60,000'den fazla filme verdiği 25 milyon derecelendirmeyi içeriyor. Ek olarak, The Movie Database (TMDB) API'sinden film detaylarını çekerek içerik tabanlı filtreleme için zengin meta verileri elde ettim.</p>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+import pandas as pd
+import numpy as np
+from scipy.sparse.linalg import svds
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+# İşbirlikçi Filtreleme: SVD Modeli
+def collaborative_filtering(ratings_matrix, user_id, num_recommendations=10):
+    # SVD matris faktörizasyonu
+    U, sigma, Vt = svds(ratings_matrix, k=50)
+    sigma_diag = np.diag(sigma)
+    
+    # Tahmin matrisi oluşturma
+    predicted_ratings = np.dot(np.dot(U, sigma_diag), Vt)
+    
+    # Kullanıcının henüz izlemediği filmleri öner
+    user_row = ratings_matrix[user_id]
+    unwatched_movies = np.where(user_row == 0)[0]
+    
+    # En yüksek tahmin puanlarına göre sırala
+    user_predictions = predicted_ratings[user_id, unwatched_movies]
+    recommended_indices = unwatched_movies[np.argsort(-user_predictions)][:num_recommendations]
+    
+    return recommended_indices
+
+# İçerik Tabanlı Filtreleme
+def content_based_filtering(movie_features, movie_id, num_recommendations=10):
+    # TF-IDF vektörleştirme
+    tfidf = TfidfVectorizer(stop_words='english')
+    tfidf_matrix = tfidf.fit_transform(movie_features)
+    
+    # Kosinüs benzerliği hesaplama
+    cosine_sim = cosine_similarity(tfidf_matrix[movie_id], tfidf_matrix)
+    
+    # En benzer filmleri sırala
+    sim_scores = list(enumerate(cosine_sim[0]))
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    sim_scores = sim_scores[1:num_recommendations+1]  # İlk sırada filmin kendisi var
+    movie_indices = [i[0] for i in sim_scores]
+    
+    return movie_indices
+
+# Hibrit Öneri Sistemi
+def hybrid_recommendations(user_id, movie_id, ratings_matrix, movie_features, collab_weight=0.7):
+    # Her iki modelden önerileri al
+    collab_recs = collaborative_filtering(ratings_matrix, user_id)
+    content_recs = content_based_filtering(movie_features, movie_id)
+    
+    # Ağırlıklı birleştirme için skor hesaplama
+    movie_scores = {}
+    for i, movie_idx in enumerate(collab_recs):
+        movie_scores[movie_idx] = collab_weight * (1.0 - i/len(collab_recs))
+        
+    for i, movie_idx in enumerate(content_recs):
+        if movie_idx in movie_scores:
+            movie_scores[movie_idx] += (1-collab_weight) * (1.0 - i/len(content_recs))
+        else:
+            movie_scores[movie_idx] = (1-collab_weight) * (1.0 - i/len(content_recs))
+    
+    # Skorlarına göre filmleri sırala
+    ranked_movies = sorted(movie_scores.items(), key=lambda x: x[1], reverse=True)
+    recommended_indices = [x[0] for x in ranked_movies]
+    
+    return recommended_indices
+                    </code></pre>
+                    
+                    <h5>Web Arayüzü</h5>
+                    <p>Sistemi Flask kullanarak web tabanlı bir uygulama olarak geliştirdim. Kullanıcılar hesap oluşturabilir, filmleri puanlayabilir ve kişiselleştirilmiş öneriler alabilir. Ayrıca, "Bu filmi beğendiyseniz" özelliği ile belirli bir film için benzer filmler keşfedilebilir.</p>
+                    
+                    <h5>Performans Değerlendirmesi</h5>
+                    <ul>
+                        <li>RMSE (Root Mean Square Error): 0.87</li>
+                        <li>Precision@10: 0.81</li>
+                        <li>Recall@10: 0.74</li>
+                        <li>Average Diversity Score: 0.68</li>
+                    </ul>
+                    
+                    <h5>Gelecek Geliştirmeler</h5>
+                    <ul>
+                        <li>Derin öğrenme tabanlı modellerin entegrasyonu (NCF, AutoEncoder)</li>
+                        <li>Film senaryosu analizi ve duygu analizi bileşenlerinin eklenmesi</li>
+                        <li>A/B testing kullanarak öneri algoritmasının sürekli iyileştirilmesi</li>
+                        <li>Gerçek zamanlı öneri güncellemeleri için stream processing eklenmesi</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary"><i class="fab fa-github me-1"></i> GitHub Deposu</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proje 4 Modal - AI Chatbot -->
+    <div class="modal fade" id="project4Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-robot me-2 text-primary"></i> AI Chatbot</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&w=500" class="img-fluid rounded" alt="AI Chatbot Projesi">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Proje Detayları</h5>
+                            <p>Bu projede, müşteri hizmetleri için tasarlanmış, doğal dil işleme yeteneklerine sahip bir chatbot geliştiriyorum. Chatbot, sık sorulan sorulara yanıt verebiliyor, müşteri sorunlarını anlayıp uygun departmanlara yönlendirebiliyor ve doğal akışta konuşmalar yapabiliyor.</p>
+                            <div class="badges mb-3">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-secondary">NLTK</span>
+                                <span class="badge bg-info">Rasa</span>
+                                <span class="badge bg-success">TensorFlow</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <strong class="me-2">Durum:</strong>
+                                <span class="project-status in-progress">Devam Ediyor</span>
+                            </div>
+                            <div>
+                                <strong>Tarih:</strong> Aralık 2024
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5>Mimari Yapı</h5>
+                    <p>Chatbot, açık kaynaklı Rasa framework'ü üzerine inşa edilmiştir ve şu bileşenlerden oluşmaktadır:</p>
+                    <ol>
+                        <li><strong>NLU (Natural Language Understanding) Modülü:</strong> Kullanıcı mesajlarını analiz ederek niyet (intent) tespiti ve varlık (entity) çıkarımı yapar.</li>
+                        <li><strong>Diyalog Yönetimi:</strong> Konuşma akışını yöneten ve bağlama duyarlı yanıtlar üreten modül.</li>
+                        <li><strong>Eylem Sunucusu:</strong> Veritabanı sorgulama, API çağrıları ve diğer harici işlemleri gerçekleştirir.</li>
+                        <li><strong>Kanal Bağdaştırıcıları:</strong> Web, WhatsApp ve Slack gibi farklı platformlara entegrasyonu sağlar.</li>
+                    </ol>
+                    
+                    <h5>Örnek Diyalog Akışı</h5>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p><strong>Kullanıcı:</strong> Merhaba</p>
+                            <p><strong>Bot:</strong> Merhaba! Size nasıl yardımcı olabilirim?</p>
+                            <p><strong>Kullanıcı:</strong> Siparişimin durumunu öğrenmek istiyorum</p>
+                            <p><strong>Bot:</strong> Sipariş numaranızı paylaşabilir misiniz?</p>
+                            <p><strong>Kullanıcı:</strong> SIP12345</p>
+                            <p><strong>Bot:</strong> SIP12345 numaralı siparişiniz hazırlanıyor ve yarın kargoya verilecek. Başka bir konuda yardıma ihtiyacınız var mı?</p>
+                            <p><strong>Kullanıcı:</strong> Teslimat adresimi değiştirmek istiyorum</p>
+                            <p><strong>Bot:</strong> Siparişiniz için teslimat adresinizi değiştirmek istediğinizi anlıyorum. Bu işlem için sizi müşteri temsilcisine bağlamam gerekiyor. Lütfen bekleyin...</p>
+                        </div>
+                    </div>
+                    
+                    <h5>Örnek Kod</h5>
+                    <pre><code class="language-python">
+# Rasa NLU Konfigürasyon Örneği (config.yml)
+language: "tr"
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+
+# Rasa Diyalog Akışı Örneği (domain.yml)
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - order_status
+  - change_address
+  - cancel_order
+  - speak_agent
+
+entities:
+  - order_number
+  - product_name
+  - address
+
+slots:
+  order_number:
+    type: text
+    influence_conversation: true
+  product_name:
+    type: text
+    influence_conversation: false
+
+responses:
+  utter_greet:
+    - text: "Merhaba! Size nasıl yardımcı olabilirim?"
+  utter_ask_order_number:
+    - text: "Sipariş numaranızı paylaşabilir misiniz?"
+  utter_order_status:
+    - text: "{order_number} numaralı siparişiniz {status} durumunda ve {estimated_delivery} tarihinde teslim edilecek."
+  utter_transfer_to_agent:
+    - text: "Sizi bir müşteri temsilcisine bağlıyorum. Lütfen bekleyin..."
+
+# Rasa Özel Eylem Örneği
+from typing import Any, Text, Dict, List
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
+import database_connector
+
+class ActionOrderStatus(Action):
+    def name(self) -> Text:
+        return "action_order_status"
+        
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            
+        order_number = tracker.get_slot("order_number")
+        if not order_number:
+            dispatcher.utter_message(template="utter_ask_order_number")
+            return []
+            
+        # Veritabanından sipariş bilgilerini al
+        order_info = database_connector.get_order_status(order_number)
+        
+        if not order_info:
+            dispatcher.utter_message(text=f"Üzgünüm, {order_number} numaralı sipariş bulunamadı.")
+            return []
+            
+        dispatcher.utter_message(
+            text=f"{order_number} numaralı siparişiniz {order_info['status']} durumunda ve "
+                 f"{order_info['estimated_delivery']} tarihinde teslim edilecek."
+        )
+        
+        return [SlotSet("order_status", order_info['status'])]
+                    </code></pre>
+                    
+                    <h5>Geliştirme Süreci ve İlerlemesi</h5>
+                    <ul>
+                        <li><strong>Tamamlanan Adımlar:</strong>
+                            <ul>
+                                <li>NLU modeli eğitimi ve temel niyet tespiti</li>
+                                <li>Diyalog akışı yönetimi</li>
+                                <li>Temel veritabanı entegrasyonu</li>
+                                <li>Web widget entegrasyonu</li>
+                            </ul>
+                        </li>
+                        <li><strong>Devam Eden Çalışmalar:</strong>
+                            <ul>
+                                <li>Daha karmaşık konuşma akışları için bağlam yönetimi</li>
+                                <li>Duygu analizi entegrasyonu</li>
+                                <li>İnsan operatöre aktarım mekanizması</li>
+                                <li>Performans ölçümleri ve sürekli model iyileştirme</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <h5>Zorluklar ve Çözümler</h5>
+                    <ul>
+                        <li><strong>Türkçe dil desteği:</strong> Türkçe için NLP kaynaklarının sınırlı olması sebebiyle custom tokenizer ve stemmer geliştirdim.</li>
+                        <li><strong>Bağlam yönetimi:</strong> Daha iyi bağlam tutma için hafıza mekanizması oluşturdum.</li>
+                        <li><strong>Eğitim verisi kısıtı:</strong> Data augmentation teknikleri ve yapay veri üretimi ile eğitim setini genişlettim.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary"><i class="fab fa-github me-1"></i> GitHub Deposu</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proje 5 Modal - Nesne Tanıma Uygulaması -->
+    <div class="modal fade" id="project5Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-eye me-2 text-primary"></i> Nesne Tanıma Uygulaması</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?q=80&w=500" class="img-fluid rounded" alt="Nesne Tanıma Projesi">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Proje Detayları</h5>
+                            <p>Bu projede, YOLO (You Only Look Once) algoritması kullanarak gerçek zamanlı nesne tanıma uygulaması geliştirmeyi planlıyorum. Uygulama, webcam üzerinden gelen görüntülerde nesneleri tanımlayacak, sınıflandıracak ve konumlandıracak.</p>
+                            <div class="badges mb-3">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-secondary">OpenCV</span>
+                                <span class="badge bg-info">YOLOv5</span>
+                                <span class="badge bg-success">PyTorch</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <strong class="me-2">Durum:</strong>
+                                <span class="project-status planning">Planlama</span>
+                            </div>
+                            <div>
+                                <strong>Tarih:</strong> Kasım 2024
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5>YOLO Algoritması Hakkında</h5>
+                    <p>YOLO (You Only Look Once), nesne tespiti için tasarlanmış hızlı ve etkili bir derin öğrenme algoritmasıdır. Geleneksel nesne tespit algoritmaları görüntüyü taramak için sliding window tekniği kullanırken, YOLO görüntüyü tek bir geçişte değerlendirir ve nesne sınıflarını, sınırlayıcı kutuları (bounding boxes) ve bunların olasılık skorlarını eş zamanlı olarak hesaplar.</p>
+                    
+                    <h5>Proje Planı</h5>
+                    <ol>
+                        <li><strong>Araştırma ve Planlama (Mevcut Aşama):</strong>
+                            <ul>
+                                <li>YOLO mimarilerinin karşılaştırılması (v3, v4, v5)</li>
+                                <li>Gereksinimlerin ve donanım ihtiyaçlarının belirlenmesi</li>
+                                <li>Proje zaman çizelgesinin oluşturulması</li>
+                            </ul>
+                        </li>
+                        <li><strong>Geliştirme Aşaması:</strong>
+                            <ul>
+                                <li>YOLOv5 modelinin kurulumu ve test edilmesi</li>
+                                <li>Web kamerası entegrasyonu</li>
+                                <li>Gerçek zamanlı video akışında nesne tespiti</li>
+                                <li>Tespit edilen nesnelerin etiketlenmesi ve izlenmesi</li>
+                            </ul>
+                        </li>
+                        <li><strong>İyileştirme ve Özelleştirme:</strong>
+                            <ul>
+                                <li>Özel veri seti ile modelin fine-tuning edilmesi</li>
+                                <li>Algılama hassasiyetinin ve performansının optimizasyonu</li>
+                                <li>Kullanıcı arayüzü geliştirme</li>
+                            </ul>
+                        </li>
+                        <li><strong>Test ve Değerlendirme:</strong>
+                            <ul>
+                                <li>Farklı ortam koşullarında (ışık, hareket, vb.) sistem performansının test edilmesi</li>
+                                <li>Hız ve doğruluk optimizasyonu</li>
+                                <li>Kullanıcı geri bildirimlerinin toplanması</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <h5>Öngörülen Kod Yapısı</h5>
+                    <pre><code class="language-python">
+import torch
+import cv2
+import numpy as np
+from time import time
+
+# YOLOv5 modelini yükleme
+model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # 'yolov5s', 'yolov5m', 'yolov5l', 'yolov5x'
+
+# Tespit edilecek sınıfları belirleme (varsayılan olarak COCO veri seti sınıfları)
+# classes = ['insan', 'araba', 'bisiklet', ... ]  # Özel sınıflar için
+model.classes = None  # Tüm sınıfları tespit et
+
+# Kamera akışını başlatma
+cap = cv2.VideoCapture(0)  # 0: varsayılan kamera
+
+# Performans metrikleri
+fps_start_time = 0
+fps = 0
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+        
+    # FPS hesaplama
+    fps_end_time = time()
+    time_diff = fps_end_time - fps_start_time
+    if time_diff > 1.0:
+        fps = 1.0 / time_diff
+        fps_start_time = fps_end_time
+        
+    # Nesne tespiti
+    results = model(frame)
+    
+    # Tespit sonuçlarını işleme
+    detections = results.pandas().xyxy[0]  # Tespit sonuçlarını pandas DataFrame'ine dönüştürme
+    
+    # Tespit edilen nesneleri çerçeveleme ve etiketleme
+    for i, detection in detections.iterrows():
+        x1, y1, x2, y2 = int(detection['xmin']), int(detection['ymin']), int(detection['xmax']), int(detection['ymax'])
+        conf = detection['confidence']
+        cls = detection['class']
+        label = f"{detection['name']} {conf:.2f}"
+        
+        # Sınırlayıcı kutu ve etiket çizme
+        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+    
+    # FPS bilgisini ekrana yazma
+    cv2.putText(frame, f"FPS: {fps:.2f}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+    
+    # Sonucu gösterme
+    cv2.imshow('YOLOv5 Nesne Tespiti', frame)
+    
+    # Çıkış için 'q' tuşu kontrolü
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+        
+cap.release()
+cv2.destroyAllWindows()
+                    </code></pre>
+                    
+                    <h5>Uygulama Alanları</h5>
+                    <ul>
+                        <li>Güvenlik ve gözetim sistemleri</li>
+                        <li>Otonom araçlar için nesne tespiti</li>
+                        <li>Perakende mağazalarda müşteri davranışı analizi</li>
+                        <li>Endüstriyel kalite kontrolü</li>
+                        <li>Akıllı ev uygulamaları</li>
+                        <li>Engelliler için yardımcı teknolojiler</li>
+                    </ul>
+                    
+                    <h5>Beklenen Zorluklar</h5>
+                    <ul>
+                        <li>Gerçek zamanlı işlem gereksinimlerinin yönetilmesi</li>
+                        <li>Düşük ışık koşullarında nesne tespiti performansının iyileştirilmesi</li>
+                        <li>Kısmi örtüşme durumunda nesne ayrımının güçlendirilmesi</li>
+                        <li>Edge cihazlara model optimizasyonu</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary"><i class="fab fa-github me-1"></i> GitHub Deposu</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Sohbet Butonu -->
+    <div class="chat-button" id="chat-icon">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- Sohbet Modal Penceresi -->
+    <div class="modal fade" id="chat-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-robot me-2"></i> AI Asistanı
+                    </h5>
+                    <button type="button" class="btn-close" id="chat-close" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chat-messages">
+                            <!-- Mesajlar buraya dinamik olarak eklenecek -->
+                        </div>
+                        <form id="chat-form" class="chat-input-form">
+                            <div class="input-group">
+                                <textarea id="user-input" class="form-control" placeholder="Yapay zeka hakkında bir soru sorun..." rows="1"></textarea>
+                                <button id="send-button" class="btn btn-primary" type="submit">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <small class="text-muted">Demo Sürüm</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="mb-0">
+                        <i class="fas fa-copyright"></i> 2025 AI Öğrenim Yolculuğum
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div id="current-date-time">
+                        <span id="current-date"></span> - 
+                        <span id="current-time"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="mailto:y53@tuta.io" class="text-white contact-icon" title="E-posta Gönder">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animasyon -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Prism.js - Kod Vurgulama -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/ai-chat.js"></script>
+</body>
+</html>
